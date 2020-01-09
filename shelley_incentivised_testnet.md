@@ -4,6 +4,12 @@ This short document should document the feedback from the Shelley incentivised t
 
 ### Last minute undelegation attack
 
+A possible attack could consist of a bad player delegating to a legitimate pool α to trigger its oversaturation
+limit and incentivising the delegators to move away from this pool over the duration of the epoch, but redelegating
+its stake from the pool α just few instances before the epoch ends. The pool α would lose its weight in block creation.
+
+A possible solution to this attack would be to put in place a rest period before each epoch of a specific duration and pick the distribution state randomly from this time interval. The delegators would be advised to make their distribution final before this rest period would take in place but would still have chance to react to a possible attack of this type. The bad player would also have less flexibility as the snapshot of the distribution would be presented as a time frame.
+
 ### Delegation causality problem
 
 Stake delegation to different pools is one of the main element that keeps the network stable and secure. Once
